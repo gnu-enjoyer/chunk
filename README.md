@@ -11,7 +11,7 @@ chunk 127.0.0.1 80 index.html
 ```commandline
 git clone https://github.com/gnu-enjoyer/chunk
 cd chunk
-cmake -B build && cmake --build .
+cmake -B build && cmake --build build
 ```
 
 minimal requirements beyond a modern C++ compiler and CMake; or treat yourself to the provided `Dockerfile`

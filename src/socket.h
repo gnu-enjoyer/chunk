@@ -6,23 +6,23 @@
 
 class Socket {
 protected:
-    int fd = 0;
-    static inline thread_local Frame
-    current_frame{};
+  int fd = 0;
+  static inline thread_local Frame current_frame{};
+
 public:
-    ~Socket();
+  ~Socket();
 };
 
 class TCP : public Socket {
-    CLI commands;
+  CLI commands;
 
-    void Send(const std::string &str) const;
+  void Send(const std::string& str) const;
 
 public:
-    void Download(const std::string_view &sv, const byte_pair &chunk,
-                  int iteration);
+  void Download(const std::string_view& sv, const byte_pair& chunk,
+                int iteration);
 
-    Frame Query();
+  Frame Query();
 
-    TCP(const CLI &cli);
+  TCP(const CLI& cli);
 };
