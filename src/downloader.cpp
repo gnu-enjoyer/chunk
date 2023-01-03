@@ -10,10 +10,10 @@ static std::vector<byte_pair> CalcChunks(unsigned int num, unsigned int n) {
   std::vector<byte_pair> chunks;
   const unsigned int chunk_size = (num + n - 1) / n;
 
-  int start = 0;
+  unsigned int start = 0;
 
-  for (int i = 0; i < n; i++) {
-    int end = start + chunk_size;
+  for (unsigned int i = 0; i < n; i++) {
+    auto end = start + chunk_size;
 
     if (end > num)
       end = num;

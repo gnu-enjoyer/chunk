@@ -47,7 +47,7 @@ Frame TCP::Query() {
 }
 
 TCP::TCP(const CLI& cli) : commands(cli) {
-  sockaddr_in remote{AF_INET, htons(cli.GetPort())};
+  sockaddr_in remote{AF_INET, htons(cli.GetPort()), in_addr{}, {0}};
 
   try {
     inet_pton(AF_INET, cli.host.data(), &remote.sin_addr);

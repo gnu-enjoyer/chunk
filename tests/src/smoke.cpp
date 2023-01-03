@@ -7,7 +7,7 @@
  * Should return: 301
  */
 
-int main(int argc, char* argv[], char* envp[]) {
+int main() {
   if (auto cli_args = CLI::Parse("1.1.1.1", "80", "index.html")) {
     auto DownloadManager = std::make_unique<Downloader>(cli_args.value());
 

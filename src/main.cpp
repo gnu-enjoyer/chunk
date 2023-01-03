@@ -8,7 +8,7 @@
  * e.g. 127.0.0.1 80 payload.bin
  */
 
-int main(int argc, char* argv[], char* envp[]) {
+int main(int argc, char* argv[]) {
   if (argc != 4)
     throw std::runtime_error("Wrong args provided, needs: IP PORT URI");
 

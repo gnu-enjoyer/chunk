@@ -7,7 +7,7 @@
 class Socket {
 protected:
   int fd = 0;
-  static inline thread_local Frame current_frame{};
+  Frame current_frame{};
 
 public:
   ~Socket();
@@ -24,5 +24,5 @@ public:
 
   Frame Query();
 
-  TCP(const CLI& cli);
+  explicit TCP(const CLI& cli);
 };

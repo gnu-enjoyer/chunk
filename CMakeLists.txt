@@ -8,7 +8,13 @@ include(FetchContent)
 
 set(CMAKE_CXX_STANDARD 20)
 
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+
 set(CMAKE_EXE_LINKER_FLAGS "-static-pie")
+
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
