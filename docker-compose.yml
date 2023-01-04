@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  webserver: 
+    image: nginx:1.23.3
+    ports: 
+      - "8080:80"
+
+  chunk:
+    build: .
+    working_dir: /home/chunk/build
+    depends_on: 
+    - webserver
+    command: 
+      bash -c "./chunk 172.17.0.1 8080 index.html"

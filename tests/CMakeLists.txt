@@ -2,10 +2,6 @@ cmake_minimum_required(VERSION 3.16)
 
 project(chunk_tests)
 
-set(CMAKE_CXX_STANDARD 20)
-
-set(CMAKE_EXE_LINKER_FLAGS "-static-pie")
-
 add_executable(chunk_tests
         ${CMAKE_SOURCE_DIR}/src/http.hpp
         ${CMAKE_SOURCE_DIR}/src/downloader.cpp
@@ -14,8 +10,7 @@ add_executable(chunk_tests
 
 target_link_libraries(chunk_tests
         PRIVATE
-        ctre
-        ${CMAKE_THREAD_LIBS_INIT})
+        ctre)
 
 target_include_directories(chunk_tests
         PRIVATE
